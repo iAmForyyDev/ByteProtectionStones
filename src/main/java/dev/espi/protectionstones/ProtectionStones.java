@@ -67,7 +67,7 @@ public class ProtectionStones extends JavaPlugin {
     public static File configLocation, blockDataFolder;
     public static CommentedFileConfig config;
 
-    private static List<PSCommandArg> commandArgs = new ArrayList<>();
+    private static final List<PSCommandArg> commandArgs = new ArrayList<>();
     private static ProtectionStones plugin;
 
     private PSEconomy economy;
