@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.espi"
-version = "2.10.6"
+version = project.version
 description = "A grief prevention plugin for Spigot Minecraft servers."
 
 java {
