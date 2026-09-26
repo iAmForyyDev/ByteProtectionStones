@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BlockHandler {
-    private static HashMap<Player, Double> lastProtectStonePlaced = new HashMap<>();
+    private static final HashMap<Player, Double> lastProtectStonePlaced = new HashMap<>();
 
     private static String checkCooldown(Player p) {
         double currentTime = System.currentTimeMillis();
