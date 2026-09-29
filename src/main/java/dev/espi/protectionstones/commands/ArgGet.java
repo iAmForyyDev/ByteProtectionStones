@@ -104,7 +104,7 @@ public class ArgGet implements PSCommandArg {
             return PSL.msg(p, PSL.INVALID_BLOCK.msg());
 
         // check for block permission (custom)
-        if (!cp.permission.equals("") && !p.hasPermission(cp.permission))
+        if (!cp.permission.isEmpty() && !p.hasPermission(cp.permission))
             return PSL.msg(p, PSL.GET_NO_PERMISSION_BLOCK.msg());
 
         // check if /ps get is disabled on this
@@ -153,7 +153,7 @@ public class ArgGet implements PSCommandArg {
     public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
         List<String> l = new ArrayList<>();
         for (PSProtectBlock b : ProtectionStones.getInstance().getConfiguredBlocks()) {
-            if ((!b.permission.equals("") && !sender.hasPermission(b.permission)) || (b.preventPsGet && !sender.hasPermission("protectionstones.admin"))) continue; // no permission
+            if ((!b.permission.isEmpty() && !sender.hasPermission(b.permission)) || (b.preventPsGet && !sender.hasPermission("protectionstones.admin"))) continue; // no permission
             l.add(b.alias);
         }
         return args.length == 2 ? StringUtil.copyPartialMatches(args[1], l, new ArrayList<>()) : null;

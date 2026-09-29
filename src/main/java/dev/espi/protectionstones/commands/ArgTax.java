@@ -162,7 +162,7 @@ public class ArgTax implements PSCommandArg {
         if (args.length != 3 && args.length != 4)
             return PSL.msg(p, PAY_HELP);
         // the amount to pay must be a number
-        if (!NumberUtils.isNumber(args[2]))
+        if (!NumberUtils.isCreatable(args[2]))
             return PSL.msg(p, PAY_HELP);
 
         PSRegion r = resolveRegion(args.length == 4 ? args[3] : null, p);

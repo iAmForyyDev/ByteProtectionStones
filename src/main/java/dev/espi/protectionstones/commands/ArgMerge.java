@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 public class ArgMerge implements PSCommandArg {
     @Override
     public List<String> getNames() {
-        return Arrays.asList("merge");
+        return List.of("merge");
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ArgMerge implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.merge");
+        return Collections.singletonList("protectionstones.merge");
     }
 
     @Override

@@ -172,13 +172,12 @@ public class BlockUtil {
             meta.setOwnerProfile(profile);
             item.setItemMeta(meta);
 
-            return item;
         } else { // normal name head
             SkullMeta sm = (SkullMeta) item.getItemMeta();
             sm.setOwningPlayer(Bukkit.getOfflinePlayer(name));
             item.setItemMeta(sm);
-            return item;
         }
+        return item;
     }
 
     private static void blockWithBase64(Block block, String uuid) {

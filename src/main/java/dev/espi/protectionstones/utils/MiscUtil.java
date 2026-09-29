@@ -112,7 +112,7 @@ public class MiscUtil {
         List<String> permissions = new ArrayList<>();
 
         // add permissions set on the user
-        permissions.addAll(user.getNodes().stream().filter(Node::getValue).map(Node::getKey).collect(Collectors.toList()));
+        permissions.addAll(user.getNodes().stream().filter(Node::getValue).map(Node::getKey).toList());
 
         // add permissions set on the groups
         permissions.addAll(user.getInheritedGroups(user.getQueryOptions())
@@ -121,7 +121,7 @@ public class MiscUtil {
                         .stream()
                         .filter(Node::getValue)
                         .map(Node::getKey))
-                .collect(Collectors.toList()));
+                .toList());
 
         return permissions;
     }
@@ -135,8 +135,8 @@ public class MiscUtil {
             // this apparently throws NumberFormatException if it is beyond the integer limit, so we catch that
             Integer.parseInt(str);
             return true;
-        } catch (NumberFormatException e) {
-        } catch (NullPointerException e) {}
+        } catch (NumberFormatException | NullPointerException ignored) {
+        }
         return false;
     }
 }

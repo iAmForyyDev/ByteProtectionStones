@@ -23,8 +23,8 @@ import java.util.Map;
 import java.util.UUID;
 
 public class UUIDCache {
-    private static Map<UUID, String> uuidToName = new HashMap<>();
-    private static Map<String, UUID> nameToUUID = new HashMap<>();
+    private static final Map<UUID, String> uuidToName = new HashMap<>();
+    private static final Map<String, UUID> nameToUUID = new HashMap<>();
 
     // toLowerCase for case insensitive search
 

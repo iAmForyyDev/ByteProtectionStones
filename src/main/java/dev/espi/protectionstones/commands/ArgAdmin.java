@@ -99,9 +99,7 @@ public class ArgAdmin implements PSCommandArg {
                 s.sendMessage(ChatColor.AQUA + "Bukkit:  " + ChatColor.GRAY + Bukkit.getVersion());
                 s.sendMessage(ChatColor.AQUA + "WG: " + ChatColor.GRAY + WorldGuardPlugin.inst().getDescription().getVersion());
                 break;
-            case "hide":
-                return ArgAdminHide.argumentAdminHide(s, args);
-            case "unhide":
+            case "hide", "unhide":
                 return ArgAdminHide.argumentAdminHide(s, args);
             case "cleanup":
                 return ArgAdminCleanup.argumentAdminCleanup(s, args);
@@ -116,7 +114,7 @@ public class ArgAdmin implements PSCommandArg {
             case "recreate":
                 return ArgAdminRecreate.argumentAdminRecreate(s, args);
             case "changeblock":
-                return ArgAdminChangeblock.argumentAdminChangeblock(s, args);
+                return ArgAdminChangeBlock.argumentAdminChangeBlock(s, args);
             case "changeregiontype":
                 return ArgAdminChangeType.argumentAdminChangeType(s, args);
             case "forcemerge":

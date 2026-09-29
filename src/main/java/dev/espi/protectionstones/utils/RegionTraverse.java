@@ -108,11 +108,10 @@ public class RegionTraverse {
                         run.accept(new TraverseReturn(v, true, pointID, exposedEdges)); // run consumer
                         if (insideVertex.get(0).equals(previous)) {
                             td = new TraverseData(insideVertex.get(1), v, false);
-                            cont = true;
                         } else {
                             td = new TraverseData(insideVertex.get(0), v, false);
-                            cont = true;
                         }
+                        cont = true;
                         break;
                     case 3: // random 1x1 jutting out
                         //if (isInRegion(v, regions)) ProtectionStones.getInstance().getLogger().info("Reached impossible situation in region edge traversal at " + v.getX() + " " + v.getZ() + ", please notify the developers that you saw this message!");
@@ -132,11 +131,10 @@ public class RegionTraverse {
                             Vector2 dir = cornersNotIn.get(0);
                             if (previous == null || previous.equals(BlockVector2.at(v.getX() + dir.getX(), v.getZ()))) {
                                 td = new TraverseData(BlockVector2.at(v.getX(), v.getZ() + dir.getZ()), v, false);
-                                cont = true;
                             } else {
                                 td = new TraverseData(BlockVector2.at(v.getX() + dir.getX(), v.getZ()), v, false);
-                                cont = true;
                             }
+                            cont = true;
                         } else if (cornersNotIn.size() == 2) { // 1 block diagonal perfect overlap
                             run.accept(new TraverseReturn(v, false, pointID, exposedEdges)); // run consumer
 

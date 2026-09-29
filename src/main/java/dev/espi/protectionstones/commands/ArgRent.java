@@ -56,7 +56,7 @@ public class ArgRent implements PSCommandArg {
 
     @Override
     public List<String> getNames() {
-        return Arrays.asList("rent");
+        return Collections.singletonList("rent");
     }
 
     @Override
@@ -66,7 +66,7 @@ public class ArgRent implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.rent");
+        return Collections.singletonList("protectionstones.rent");
     }
 
     @Override
@@ -235,7 +235,7 @@ public class ArgRent implements PSCommandArg {
     public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
         List<String> arg = Arrays.asList("lease", "stoplease", "rent", "stoprenting");
         if (args.length == 3 && args[1].equals("lease")) {
-            return StringUtil.copyPartialMatches(args[2], Arrays.asList("100"), new ArrayList<>());
+            return StringUtil.copyPartialMatches(args[2], Collections.singletonList("100"), new ArrayList<>());
         } else if (args.length == 4 && args[1].equals("lease")) {
             return StringUtil.copyPartialMatches(args[3], Arrays.asList("1w", "1d", "1h"), new ArrayList<>());
         }

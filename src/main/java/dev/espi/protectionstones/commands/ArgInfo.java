@@ -45,7 +45,7 @@ public class ArgInfo implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.info");
+        return Collections.singletonList("protectionstones.info");
     }
 
     @Override
@@ -130,21 +130,25 @@ public class ArgInfo implements PSCommandArg {
 
             switch (args[1].toLowerCase()) {
                 case "members":
-                    if (!p.hasPermission("protectionstones.members"))
+                    if (!p.hasPermission("protectionstones.members")) {
                         return PSL.NO_PERMISSION_MEMBERS.send(p);
+                    }
 
                     displayMembers(p, r.getWGRegion());
                     break;
                 case "owners":
-                    if (!p.hasPermission("protectionstones.owners"))
+                    if (!p.hasPermission("protectionstones.owners")) {
                         return PSL.NO_PERMISSION_OWNERS.send(p);
+                    }
 
                     displayOwners(p, r.getWGRegion());
                     break;
                 case "flags":
-                    if (!p.hasPermission("protectionstones.flags"))
+                    if (!p.hasPermission("protectionstones.flags")) {
                         return PSL.NO_PERMISSION_FLAGS.send(p);
-                        displayFlags(p, r);
+                    }
+
+                    displayFlags(p, r);
                     break;
                 default:
                     PSL.INFO_HELP.send(p);

@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BlockHandler {
-    private static HashMap<Player, Double> lastProtectStonePlaced = new HashMap<>();
+    private static final HashMap<Player, Double> lastProtectStonePlaced = new HashMap<>();
 
     private static String checkCooldown(Player p) {
         double currentTime = System.currentTimeMillis();
@@ -280,7 +280,7 @@ public class BlockHandler {
 
         if (blockOptions.startWithTaxAutopay) {
             // set tax auto-pay (even if taxing is not enabled)
-            region.setFlag(FlagHandler.PS_TAX_AUTOPAYER, p.getUniqueId().toString());
+            region.setFlag(FlagHandler.PS_TAX_AUTO_PAYER, p.getUniqueId().toString());
         }
 
         // show merge menu

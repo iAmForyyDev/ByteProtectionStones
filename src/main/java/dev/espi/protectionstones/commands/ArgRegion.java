@@ -44,7 +44,7 @@ public class ArgRegion implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.region");
+        return Collections.singletonList("protectionstones.region");
     }
 
     @Override

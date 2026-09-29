@@ -1,9 +1,4 @@
-/target/
-/.idea/
-/bin/
-/.settings/
-/ProtectionStones.iml
-/.classpath
-/.project
-/dependency-reduced-pom.xml
-/*.iml
+.gradle
+.idea
+build
+*.iml

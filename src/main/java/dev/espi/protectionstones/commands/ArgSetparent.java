@@ -43,7 +43,7 @@ public class ArgSetparent implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.setparent");
+        return Collections.singletonList("protectionstones.setparent");
     }
 
     @Override

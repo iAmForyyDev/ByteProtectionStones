@@ -303,12 +303,12 @@ public class PSStandardRegion extends PSRegion {
 
     @Override
     public UUID getTaxAutopayer() {
-        return wgregion.getFlag(FlagHandler.PS_TAX_AUTOPAYER) == null ? null : UUID.fromString(wgregion.getFlag(FlagHandler.PS_TAX_AUTOPAYER));
+        return wgregion.getFlag(FlagHandler.PS_TAX_AUTO_PAYER) == null ? null : UUID.fromString(wgregion.getFlag(FlagHandler.PS_TAX_AUTO_PAYER));
     }
 
     @Override
     public void setTaxAutopayer(UUID player) {
-        WGUtils.setFlagIfNeeded(wgregion, FlagHandler.PS_TAX_AUTOPAYER, player == null ? null : player.toString());
+        WGUtils.setFlagIfNeeded(wgregion, FlagHandler.PS_TAX_AUTO_PAYER, player == null ? null : player.toString());
     }
 
     @Override

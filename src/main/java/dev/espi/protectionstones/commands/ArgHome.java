@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 
 public class ArgHome implements PSCommandArg {
 
-    private static HashMap<UUID, List<String>> tabCache = new HashMap<>();
+    private static final HashMap<UUID, List<String>> tabCache = new HashMap<>();
 
     @Override
     public List<String> getNames() {
@@ -48,7 +48,7 @@ public class ArgHome implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.home");
+        return Collections.singletonList("protectionstones.home");
     }
 
     @Override

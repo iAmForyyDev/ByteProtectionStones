@@ -101,8 +101,7 @@ public class LegacyUpgrade {
                 if (ProtectionStones.isPSRegion(r)) {
                     PSRegion psr = PSRegion.fromWGRegion(world, r);
 
-                    if (psr instanceof PSGroupRegion) {
-                        PSGroupRegion psgr = (PSGroupRegion) psr;
+                    if (psr instanceof PSGroupRegion psgr) {
                         for (PSMergedRegion psmr : psgr.getMergedRegions()) {
 
                             String type = psmr.getType();

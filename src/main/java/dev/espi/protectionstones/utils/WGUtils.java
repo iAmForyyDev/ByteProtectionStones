@@ -88,9 +88,6 @@ public class WGUtils {
 
     /**
      * Find regions that are overlapping or adjacent to the region given.
-     * @param r
-     * @param rgm
-     * @param w
      * @return the list of regions
      */
     public static Set<ProtectedRegion> findOverlapOrAdjacentRegions(ProtectedRegion r, RegionManager rgm, World w) {
@@ -121,9 +118,6 @@ public class WGUtils {
 
     /**
      * Find regions that are overlapping or adjacent to the region given.
-     * @param r
-     * @param regionsToCheck
-     * @param w
      * @return the list of regions
      */
     public static Set<ProtectedRegion> findOverlapOrAdjacentRegions(ProtectedRegion r, List<ProtectedRegion> regionsToCheck, World w) {
