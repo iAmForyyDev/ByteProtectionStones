@@ -44,7 +44,7 @@ repositories {
 dependencies {
     implementation("org.bstats:bstats-bukkit:3.0.2")
 
-    compileOnly("org.spigotmc:spigot-api:1.21.10-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:26.2-R0.1-SNAPSHOT")
 
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.9-SNAPSHOT") {
         exclude(group = "org.bukkit")
