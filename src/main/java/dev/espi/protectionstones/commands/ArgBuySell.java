@@ -29,6 +29,7 @@ import org.bukkit.entity.Player;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class ArgBuySell implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.buysell");
+        return Collections.singletonList("protectionstones.buysell");
     }
 
     @Override

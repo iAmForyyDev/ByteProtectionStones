@@ -86,7 +86,7 @@ public class ListenerClass implements Listener {
                 int amount = 0;
                 for (PSRegion psr : psp.getTaxEligibleRegions()) {
                     for (PSRegion.TaxPayment tp : psr.getTaxPaymentsDue()) {
-                        amount += tp.getAmount();
+                        amount = (int) (amount + tp.getAmount());
                     }
                 }
 
@@ -102,7 +102,7 @@ public class ListenerClass implements Listener {
     public void onBlockPlaceLowPriority(PlaceBlockEvent event) {
         var cause = event.getCause().getRootCause();
 
-        if (cause instanceof Player player && event.getBlocks().size() >= 1) {
+        if (cause instanceof Player player && !event.getBlocks().isEmpty()) {
             var block = event.getBlocks().get(0);
             if (!ProtectionStones.isProtectBlockItem(player.getInventory().getItemInHand())) {
                 return;

@@ -29,8 +29,8 @@ import java.util.*;
 
 public class ArgTp implements PSCommandArg {
 
-    private static HashMap<UUID, Integer> waitCounter = new HashMap<>();
-    private static HashMap<UUID, BukkitTask> taskCounter = new HashMap<>();
+    private static final HashMap<UUID, Integer> waitCounter = new HashMap<>();
+    private static final HashMap<UUID, BukkitTask> taskCounter = new HashMap<>();
 
     // /ps tp, /ps home
 

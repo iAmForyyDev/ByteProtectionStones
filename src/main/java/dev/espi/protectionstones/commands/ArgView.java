@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ArgView implements PSCommandArg {
 
-    private static List<UUID> cooldown = new ArrayList<>();
+    private static final List<UUID> cooldown = new ArrayList<>();
 
     @Override
     public List<String> getNames() {
@@ -43,7 +43,7 @@ public class ArgView implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.view");
+        return Collections.singletonList("protectionstones.view");
     }
 
     @Override

@@ -51,63 +51,43 @@ class ConfigPlaceholders {
 
     private static String resolveGlobalConfig(String identifier) {
         StringBuilder sb = new StringBuilder();
-        switch (identifier) {
-            case "config_config_version":
-                return getConf().configVersion + "";
-            case "config_uuidupdated":
-                return getConf().uuidupdated + "";
-            case "config_region_negative_min_max_updated":
-                return getConf().regionNegativeMinMaxUpdated + "";
-            case "config_placing_cooldown":
-                return getConf().placingCooldown + "";
-            case "config_async_load_uuid_cache":
-                return getConf().asyncLoadUUIDCache + "";
-            case "config_allow_duplicate_region_names":
-                return getConf().allowDuplicateRegionNames + "";
-            case "config_ps_view_cooldown":
-                return getConf().psViewCooldown + "";
-            case "config_ps_base_command":
-                return getConf().base_command;
-            case "config_aliases": // comma separated list
+        return switch (identifier) {
+            case "config_config_version" -> getConf().configVersion + "";
+            case "config_uuidupdated" -> getConf().uuidupdated + "";
+            case "config_region_negative_min_max_updated" -> getConf().regionNegativeMinMaxUpdated + "";
+            case "config_placing_cooldown" -> getConf().placingCooldown + "";
+            case "config_async_load_uuid_cache" -> getConf().asyncLoadUUIDCache + "";
+            case "config_allow_duplicate_region_names" -> getConf().allowDuplicateRegionNames + "";
+            case "config_ps_view_cooldown" -> getConf().psViewCooldown + "";
+            case "config_ps_base_command" -> getConf().base_command;
+            case "config_aliases" -> {
                 for (int i = 0; i < getConf().aliases.size(); i++) {
-                    sb.append(getConf().aliases.get(i)).append(i == getConf().aliases.size()-1 ? "" : ", ");
+                    sb.append(getConf().aliases.get(i)).append(i == getConf().aliases.size() - 1 ? "" : ", ");
                 }
-                return sb.toString();
-            case "config_drop_item_when_inventory_full":
-                return getConf().dropItemWhenInventoryFull + "";
-            case "config_regions_must_be_adjacent":
-                return getConf().regionsMustBeAdjacent + "";
-            case "config_allow_merging_regions":
-                return getConf().allowMergingRegions + "";
-            case "config_allow_merging_holes":
-                return getConf().allowMergingHoles + "";
-            case "default_protection_block_placement_off":
-                return getConf().defaultProtectionBlockPlacementOff + "";
-            case "allow_addowner_for_offline_players_without_lp":
-                return getConf().allowAddownerForOfflinePlayersWithoutLp + "";
-            case "allow_home_teleport_for_members":
-                return getConf().allowHomeTeleportForMembers + "";
-            case "admin_cleanup_delete_regions_with_members_but_no_owners":
-                return getConf().cleanupDeleteRegionsWithMembersButNoOwners + "";
-
-            case "config_economy_max_rent_price":
-                return String.format("%.2f", getConf().maxRentPrice);
-            case "config_economy_min_rent_price":
-                return String.format("%.2f", getConf().minRentPrice);
-            case "config_economy_max_rent_period":
-                return getConf().maxRentPeriod + "";
-            case "config_economy_max_rent_period_pretty":
-                return MiscUtil.describeDuration(Duration.ofSeconds(getConf().maxRentPeriod));
-            case "config_economy_min_rent_period":
-                return getConf().minRentPeriod + "";
-            case "config_economy_min_rent_period_pretty":
-                return MiscUtil.describeDuration(Duration.ofSeconds(getConf().minRentPeriod));
-            case "config_economy_tax_enabled":
-                return getConf().taxEnabled + "";
-            case "config_economy_tax_message_on_join":
-                return getConf().taxMessageOnJoin + "";
-        }
-        return "";
+                yield sb.toString();
+            }
+            case "config_drop_item_when_inventory_full" -> getConf().dropItemWhenInventoryFull + "";
+            case "config_regions_must_be_adjacent" -> getConf().regionsMustBeAdjacent + "";
+            case "config_allow_merging_regions" -> getConf().allowMergingRegions + "";
+            case "config_allow_merging_holes" -> getConf().allowMergingHoles + "";
+            case "default_protection_block_placement_off" -> getConf().defaultProtectionBlockPlacementOff + "";
+            case "allow_addowner_for_offline_players_without_lp" ->
+                    getConf().allowAddownerForOfflinePlayersWithoutLp + "";
+            case "allow_home_teleport_for_members" -> getConf().allowHomeTeleportForMembers + "";
+            case "admin_cleanup_delete_regions_with_members_but_no_owners" ->
+                    getConf().cleanupDeleteRegionsWithMembersButNoOwners + "";
+            case "config_economy_max_rent_price" -> String.format("%.2f", getConf().maxRentPrice);
+            case "config_economy_min_rent_price" -> String.format("%.2f", getConf().minRentPrice);
+            case "config_economy_max_rent_period" -> getConf().maxRentPeriod + "";
+            case "config_economy_max_rent_period_pretty" ->
+                    MiscUtil.describeDuration(Duration.ofSeconds(getConf().maxRentPeriod));
+            case "config_economy_min_rent_period" -> getConf().minRentPeriod + "";
+            case "config_economy_min_rent_period_pretty" ->
+                    MiscUtil.describeDuration(Duration.ofSeconds(getConf().minRentPeriod));
+            case "config_economy_tax_enabled" -> getConf().taxEnabled + "";
+            case "config_economy_tax_message_on_join" -> getConf().taxMessageOnJoin + "";
+            default -> "";
+        };
     }
 
     static String resolveBlockConfig(PSProtectBlock b, String identifier) {

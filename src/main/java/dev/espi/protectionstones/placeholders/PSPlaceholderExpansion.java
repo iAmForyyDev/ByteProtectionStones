@@ -20,6 +20,9 @@ package dev.espi.protectionstones.placeholders;
 import dev.espi.protectionstones.ProtectionStones;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Locale;
 
 public class PSPlaceholderExpansion extends PlaceholderExpansion {
 
@@ -36,7 +39,9 @@ public class PSPlaceholderExpansion extends PlaceholderExpansion {
 
     @Override
     public String getIdentifier() {
-        return "protectionstones";
+        return ProtectionStones.getInstance().getName()
+                .replace("-", "")
+                .toLowerCase(Locale.ROOT);
     }
 
     @Override

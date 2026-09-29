@@ -35,7 +35,7 @@ class ArgAdminStats {
 
         int size = 0;
         for (RegionManager rgm : WGUtils.getAllRegionManagers().values()) {
-            size += rgm.getRegions().values().stream().filter(ProtectionStones::isPSRegion).count();
+            size = (int) (size + rgm.getRegions().values().stream().filter(ProtectionStones::isPSRegion).count());
         }
 
         if (args.length > 2) {

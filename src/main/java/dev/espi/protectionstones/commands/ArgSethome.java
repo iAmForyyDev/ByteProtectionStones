@@ -44,7 +44,7 @@ public class ArgSethome implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.sethome");
+        return Collections.singletonList("protectionstones.sethome");
     }
 
     @Override

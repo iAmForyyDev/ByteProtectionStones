@@ -40,7 +40,7 @@ public class ArgReload implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.admin");
+        return Collections.singletonList("protectionstones.admin");
     }
 
     @Override

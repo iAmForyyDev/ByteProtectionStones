@@ -34,7 +34,7 @@ import java.util.List;
 
 public class RecipeUtil {
 
-    private static List<NamespacedKey> recipes = new ArrayList<>();
+    private static final List<NamespacedKey> recipes = new ArrayList<>();
     public static void setupPSRecipes() {
         for (PSProtectBlock b : ProtectionStones.getInstance().getConfiguredBlocks()) {
             // add custom recipes to Bukkit

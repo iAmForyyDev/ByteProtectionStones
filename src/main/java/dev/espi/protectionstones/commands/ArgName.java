@@ -41,7 +41,7 @@ public class ArgName implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.name");
+        return Collections.singletonList("protectionstones.name");
     }
 
     @Override

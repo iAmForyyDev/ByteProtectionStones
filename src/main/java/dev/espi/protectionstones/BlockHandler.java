@@ -280,7 +280,7 @@ public class BlockHandler {
 
         if (blockOptions.startWithTaxAutopay) {
             // set tax auto-pay (even if taxing is not enabled)
-            region.setFlag(FlagHandler.PS_TAX_AUTOPAYER, p.getUniqueId().toString());
+            region.setFlag(FlagHandler.PS_TAX_AUTO_PAYER, p.getUniqueId().toString());
         }
 
         // show merge menu

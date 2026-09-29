@@ -50,7 +50,7 @@ class PlayerPlaceholders {
                     .entrySet()
                     .stream()
                     .filter(e -> e.getKey().alias.equals(alias))
-                    .collect(Collectors.toList());
+                    .toList();
 
             if (p.hasPermission("protectionstones.admin")) {
                 return "-1";

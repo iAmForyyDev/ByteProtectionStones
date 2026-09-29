@@ -43,7 +43,7 @@ public class ArgList implements PSCommandArg {
 
     @Override
     public List<String> getPermissionsToExecute() {
-        return Arrays.asList("protectionstones.list");
+        return Collections.singletonList("protectionstones.list");
     }
 
     @Override

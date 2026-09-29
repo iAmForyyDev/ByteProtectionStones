@@ -60,7 +60,7 @@ public class FlagHandler {
     public static final Flag<Set<String>> PS_RENT_SETTINGS = new SetFlag<>("ps-rent-settings", new StringFlag("ps-rent-setting")); // TODO
     public static final Flag<Set<String>> PS_TAX_PAYMENTS_DUE = new SetFlag<>("ps-tax-payments-due", new StringFlag("ps-tax-payment"));
     public static final Flag<Set<String>> PS_TAX_LAST_PAYMENT_ADDED = new SetFlag<>("ps-tax-last-payment-added", new StringFlag("ps-tax-last-payment-entry"));
-    public static final Flag<String> PS_TAX_AUTOPAYER = new StringFlag("ps-tax-autopayer");
+    public static final Flag<String> PS_TAX_AUTO_PAYER = new StringFlag("ps-tax-autopayer");
 
     // called on initial start
     static void registerFlags() {
@@ -81,7 +81,7 @@ public class FlagHandler {
             registry.register(PS_RENT_SETTINGS);
             registry.register(PS_TAX_PAYMENTS_DUE);
             registry.register(PS_TAX_LAST_PAYMENT_ADDED);
-            registry.register(PS_TAX_AUTOPAYER);
+            registry.register(PS_TAX_AUTO_PAYER);
         } catch (FlagConflictException e) {
             Bukkit.getLogger().severe("Flag conflict found! The plugin will not work properly! Please contact the developers of the plugin.");
             e.printStackTrace();
@@ -210,7 +210,7 @@ public class FlagHandler {
                 // apply flag
                 if (isEmpty) { // empty flag
                     b.regionFlags.put(flag, "");
-                } else if (!group.equals("")) { // group flag
+                } else if (!group.isEmpty()) { // group flag
 
                     RegionGroup rGroup = flag.getRegionGroupFlag().detectValue(group);
                     if (rGroup == null) {
