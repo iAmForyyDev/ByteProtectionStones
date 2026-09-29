@@ -114,7 +114,7 @@ public class ArgAdmin implements PSCommandArg {
             case "recreate":
                 return ArgAdminRecreate.argumentAdminRecreate(s, args);
             case "changeblock":
-                return ArgAdminChangeblock.argumentAdminChangeblock(s, args);
+                return ArgAdminChangeBlock.argumentAdminChangeBlock(s, args);
             case "changeregiontype":
                 return ArgAdminChangeType.argumentAdminChangeType(s, args);
             case "forcemerge":

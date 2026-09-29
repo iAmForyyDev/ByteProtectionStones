@@ -26,10 +26,10 @@ import org.bukkit.command.CommandSender;
 
 import java.util.function.Consumer;
 
-class ArgAdminChangeblock {
+class ArgAdminChangeBlock {
 
     // /ps admin changeblock [world] [fromblockalias] [toblockalias]
-    static boolean argumentAdminChangeblock(CommandSender p, String[] args) {
+    static boolean argumentAdminChangeBlock(CommandSender p, String[] args) {
         if (args.length < 5) {
             PSL.msg(p, ArgAdmin.getChangeBlockHelp());
             return true;
